@@ -15,24 +15,11 @@ from functools import update_wrapper
 from Routing import Routing
 
 
-#F = t.TypeVar("F", bound=t.Callable[..., t.Any])
-
-"""def setupmethod(f: F) -> F:
-    f_name = f.__name__
-
-    def wrapper_func(self, *args: t.Any, **kwargs: t.Any) -> t.Any:
-        self._check_setup_finished(f_name)
-        return f(self, *args, **kwargs)
-
-    return t.cast(F, update_wrapper(wrapper_func, f))"""
-
 class SquidAPI(object):
 
     url_map = None
-    #file_path: str = None
     routing: Routing = None
 
-    #response: Response = None
 
     
     def __init__(self, name: str):
@@ -80,7 +67,6 @@ class SquidAPI(object):
 
 
     #routing begin
-    #@setupmethod
     def route(self, rule: str, file: str, **options: t.Any):
         
         def decorator(f):
@@ -97,8 +83,6 @@ class SquidAPI(object):
 
         return None
 
-    """def _check_setup_finished(self, f_name: str) -> None:
-        return None"""
     #routing end
 
 
@@ -107,7 +91,4 @@ class SquidAPI(object):
         return self.wsgi_app(environ, start_response)
 
 
-
-    """def _check_setup_finished(self, f_name: str) -> None:
-        return None"""
     
