@@ -18,15 +18,13 @@ from Routing import Routing
 class SquidAPI(object):
 
     url_map = None
-    routing: Routing = None
+    # routing: Routing = None
 
 
     
-    def __init__(self, name: str):
+    def __init__(self):
 
-        self.routing = Routing()
-
-        #self.file_path = name
+        # self.routing = Routing()
 
         self.url_map = Map([])
 
@@ -67,7 +65,7 @@ class SquidAPI(object):
 
 
     #routing begin
-    def route(self, rule: str, file: str, **options: t.Any):
+    def route(self, rule: str, **options: t.Any):
         
         def decorator(f):
             endpoint = options.pop("endpoint", None)
