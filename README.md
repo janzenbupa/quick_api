@@ -1,1 +1,2 @@
 "# quick_api" 
+The SquidAPI class is the actual class for the application. This is where the logic occurs and routing will occur. The __init__.py file is the file that will instantiate the application. It should contain a SquidAPI object and also contain just an empty method for any objects that will be an endpoint. The actual methods that are the endpoints, should be put in the Endpoints class in the Endpoints folder. 
