@@ -1,4 +1,3 @@
-from ast import Str
 import imp
 from importlib import import_module
 import os
@@ -12,7 +11,6 @@ from jinja2 import Environment, FileSystemLoader
 import typing as t
 from functools import update_wrapper
 
-from Routing import Routing
 
 
 class SquidAPI(object):
@@ -23,8 +21,6 @@ class SquidAPI(object):
 
     
     def __init__(self):
-
-        # self.routing = Routing()
 
         self.url_map = Map([])
 
@@ -47,13 +43,9 @@ class SquidAPI(object):
     def dispatch_request(self, request):
         adapter = self.url_map.bind_to_environ(request.environ)
 
-        print(self.url_map)
-
         try:
             import Endpoints
             edpt = Endpoints
-            import sys
-            t = dir(sys.modules[__name__])
 
             endpoint, values = adapter.match()
             from Endpoints import Endpoints as ep
