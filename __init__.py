@@ -11,6 +11,10 @@ def create_app():
     def hello():
         return None
 
+    @app.route("/<name>")
+    def hello_second(name):
+        return None
+
     return app
 
 def main():

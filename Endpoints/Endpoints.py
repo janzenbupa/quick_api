@@ -12,3 +12,10 @@ class Endpoints(object):
         """
         Each method must return a Response object. 
         """
+
+
+    def hello_second(self, request, name):
+
+        print(name)
+        #name: str = request.args.get("name")
+        return Response("Hello, " + name)
