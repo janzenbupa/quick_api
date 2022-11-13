@@ -7,6 +7,8 @@ class Endpoints(object):
         self = self
 
     def hello(self, request):
+        print(request.get_data())
+        print(request.content_type)
         return Response("This string came from the Hello file.")
 
         """
