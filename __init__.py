@@ -18,10 +18,10 @@ def create_app():
     return app
 
 def main():
-    app = create_app()
-    from werkzeug import run_simple
-
-    run_simple("127.0.0.1", 5000, app, use_debugger=True, use_reloader=True)
+    app = create_app()=
+    from run_app.run_app import run_app
+    run_app("127.0.0.1", 5000, app, use_debugger=True, use_reloader=True)
+    
 
 if __name__ == '__main__':
     main()
