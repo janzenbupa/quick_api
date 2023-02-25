@@ -1,6 +1,11 @@
 from SquidAPI import SquidAPI
 import os
 
+"""
+This is a sample for an application. Each application should contain an __init__.py file
+which will instantiate the SquidAPI object. 
+"""
+
 def create_app():
     name = __name__
     file = __file__
